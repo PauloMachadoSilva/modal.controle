@@ -1,0 +1,50 @@
+<div class="wrapper" ng-if="!$ctrl.isMobile">
+    <div class="pos-header">
+        <p class="name">chegou a hora de ter um <span class="blue">PÓS DA OI</span></p>
+    </div>
+    <div class="plan">
+        <span class="name">7GB</span>
+        <span class="minutes">+ Minutos ilimitados</span>
+        <span class="description">Para qualquer operadora</span>
+    </div>
+    <div class="details">
+        <span class="item -sms-blue">
+            <strong>SMS</strong>
+            <span>ilimitado</span>
+        </span>
+        <span class="item -dependentes">
+            <strong>Dependentes</strong>
+            <span>inclua até 4 pessoas</span>
+        </span>
+        <span class="item -oiplay">
+            <strong>Oi Play</strong>
+        </span>
+    </div>
+</div>
+<div class="wrapper" ng-if="$ctrl.isMobile">
+    <div class="pos-header" ng-click="$ctrl.expandInfoPos($event)">
+        <p class="name">chegou a hora de ter um <span class="blue">PÓS DA OI</span></p>
+        <span class="arrow"></span>
+    </div>
+    <div class="info">
+        <span class="name">7GB</span>
+        <span class="minutes">+ Minutos ilimitados</span>
+        <span class="description">local e DDD usando 31 ou 14 pra qualquer operadora</span>
+    </div>
+    <div class="details">
+        <span class="item -sms-blue">
+            <strong>SMS</strong>
+            <span>ilimitado</span>
+        </span>
+        <span class="item -dependentes">
+            <strong>Dependentes</strong>
+            <span>inclua até 4 pessoas</span>
+        </span>
+        <span class="item -oiplay">
+            <strong>Oi Play</strong>
+        </span>
+    </div>
+    <div class="btn-wrapper">
+        <a class="btn -default" href="http://oiplanospos.com.br/?utm_source=lp.controleboleto&utm_medium=button&utm_campaign=crv.controle" target="_blank">Conhecer ofertas Oi Pós</a>
+    </div>
+</div>

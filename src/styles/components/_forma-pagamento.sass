@@ -1,0 +1,206 @@
+.pagamento-container
+    padding: 0 30px
+
+    .titulo-pagamento
+        color: #4d4d4d
+        font-size: 28px
+        letter-spacing: -0.4px
+        line-height: 0.93
+        margin-top: 58px
+        text-align: left
+    .pagamento
+        display: flex
+        flex-direction: column
+        width: 100%
+
+        .check
+            background-position: center 40px
+            bottom: 0
+            cursor: pointer
+            text-align: center
+            flex: 1
+
+            &.-cartao
+                background-image: url(/assets/images/card.svg)
+                background-repeat: no-repeat
+                background-position: right
+                background-position-x: 353px
+                background-position-y: 36px
+                background-size: 67px
+                border: 1px solid #cccccc
+
+            &.-boleto
+                background-image: url(/assets/images/bill.svg)
+                background-repeat: no-repeat
+                background-position: right
+                background-position-x: 353px
+                background-position-y: 18px
+                background-size: 67px
+                margin-top: 5%
+                border: 1px solid #cccccc
+                height: 81px
+
+            &.-diferente-cartao
+                border: solid 2px $oitava
+
+            &.-diferente-cartao-disable
+                background-image: url(/assets/images/card-disabled.svg)
+                
+                .bonus-texto
+                    background-color: #eeeded
+                    color: #a9a9a9
+
+
+            &.-diferente-boleto
+                border: solid 2px $oitava
+
+            &.-diferente-boleto-disable
+                background-image: url(/assets/images/bill-disabled.svg)
+
+            .bonus-texto
+                border: 1px solid $segunda
+                border-radius: 25px
+                padding: 3px 13px
+                width: 25%
+                margin-top: -5%
+                font-size: 14px
+                margin-right: 4%
+                margin-left: auto
+                color: $segunda
+                background-color: $oitava
+                font-family: 'SimplonBPLight'
+
+            .box
+                &.-payment
+                    width: 58%
+                    justify-content: left
+                    margin-right: auto
+                    margin-bottom: 2%
+
+                .title
+                    &.-payment
+                        height: 14px
+                        margin-right: 42%
+                        margin-top: 10%
+                        font-size: 14px
+                        &.-bill
+                            margin-top: 1%
+                .text 
+                    &.-payment
+                        margin-top: 7%
+                        width: 85%
+                        margin-left: 17%
+                        font-size: 12px
+                        text-align: justify
+
+            .label
+                display: inline-block
+                font-size: 14px
+                position: relative
+                top: 42%
+
+                &:before
+                    background: #fff
+                    border: 2px solid #a02bff
+                    border-radius: 50%
+                    content: ''
+                    display: inline-block
+                    height: 17px
+                    position: relative
+                    width: 17px
+                    top: 4px
+                    left: -8px
+                    transform: translateX(0)
+
+                &:after
+                    background: #a02bff
+                    border-radius: 50%
+                    border: 0
+                    content: ''
+                    display: none
+                    height: 11px
+                    position: absolute
+                    top: 9px
+                    right: calc(100% - 8px)
+                    width: 11px
+
+            .radio-pagamento
+                background-color: #a02bff
+
+            .radio-pagamento:checked
+                + .label
+                    &:after
+                        display: inline-block
+
+    .actions
+        display: flex
+        margin-top: 30px
+        .spacer
+            flex: 1
+        .btn.-payment
+            width: 58%
+
+.bonus-details
+  display: none
+
+@media screen and(max-width: $max-mobile)
+
+    .pagamento-container
+        padding: 0 20px
+
+        .titulo-pagamento
+            font-size: 28px
+            line-height: 1.18
+            margin-top: 11px
+
+        .pagamento
+            flex-direction: column
+
+            .check
+                text-align: left
+                background-position: 20px center
+
+                &.-boleto
+                    background-repeat: no-repeat
+                    background-position: center
+                    background-position-y: 84px
+                    height: 151px
+
+                &.-cartao
+                    background-repeat: no-repeat
+                    background-position: center
+                    background-size: 64px
+                    background-position-y: 105px
+                    height: 197px
+
+                .bonus-texto
+                    margin: 23% 0 2% 26%
+                    padding: 3px 0
+                    text-align: center
+                    width: 49%
+
+                .box.-payment
+                    width: 76%
+                    padding-left: 23px
+
+                    .text
+                        &.-payment
+                            margin-left: 9%
+
+                .radio-pagamento
+                    float: left
+                .label
+                    top: 20%
+        .actions
+            margin-top: 22px
+            .spacer
+                display: none
+            .btn.-payment
+                width: 100%
+    .bonus-details
+      display: block
+      top: 25px
+      font-size: 12px
+      position: relative
+      text-align: center
+

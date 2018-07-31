@@ -1,0 +1,43 @@
+<div class="confirmacao-container">
+    <wza-tab-bar ng-if="!$ctrl.isMobile">
+        <wza-tab active="true" name="Confirmação"></wza-tab>
+        <wza-tab name="Dados Pessoais"></wza-tab>
+        <wza-tab ng-if="$ctrl.isCreditcard" name="Dados do Cartão"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab active="true" name="Confirmação"></wza-tab>
+    </wza-tab-bar>
+
+    <div class="header-confirmacao">
+        <h2 class="titulo" id="verifiqueSms">Verifique no seu celular o SMS que enviamos com o código de segurança</h2>
+    </div>
+
+    <div class="texto">
+        <div class="instrucoes">Enviamos um torpedo SMS para o número {{$ctrl.telefone | brPhoneNumber}} com um código de segurança</div>
+    </div>
+
+    <form class="form" name="confirmacaoForm" ng-submit="$ctrl.sendToken()" novalidate>
+        <label for="telefone">Digite abaixo o código SMS que você recebeu</label>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <span class="validacao" ng-class="{'visivel': $ctrl.errorMessages.token || $ctrl.errorMessages.resendToken}">{{$ctrl.errorValidation}}</span>
+                <input type="text" id="sms" name="token" ng-model="$ctrl.token" placeholder="Código SMS" mask="9999" maxlength="6" autofocus form-validator required
+                    number-validator></input>
+            </div>
+        </div>
+        <a href="#" class="alterar" ng-click="$ctrl.requestToken()"> Não recebeu ainda ? <span class="cliqueaqui" id="EnviarSMSNovamente">Enviar de novo.</span></a>
+        <div class="actions">
+            <div class="spacer"></div>
+            <button type="submit" id="submitSMSForm" class="btn -default" ng-disabled="$ctrl.isLoading" id="continuarSms">Continuar</button>
+        </div>
+    </form>
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab name="Dados Pessoais"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="($ctrl.isMobile && $ctrl.isCreditcard)">
+        <wza-tab name="Dados do Cartão"></wza-tab>
+    </wza-tab-bar>
+</div>

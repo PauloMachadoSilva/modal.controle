@@ -1,0 +1,26 @@
+.btn
+  font-family: 'SimplonBPRegular', sans-serif
+  font-size: 16px
+  font-weight: 300
+  letter-spacing: -0.4px
+  text-align: center
+  color: $texto-botao
+  border-radius: 6px
+  border: none
+  padding: 22px 38px
+  text-decoration: none
+  display: inline-block
+  cursor: pointer
+  background-color: $bg-botao
+
+  > strong
+    font-family: 'SimplonBPMedium', sans-serif
+    font-weight: 500
+
+  &.default
+    background-color: $bg-botao
+
+.btn[disabled]
+  background: $bg-botao-destivado
+  opacity: 0.5
+

@@ -1,0 +1,133 @@
+.confirmacao-container
+  .header-confirmacao
+    .titulo
+      font-family: $font-lp
+      font-weight: 500
+
+  .texto
+    font-family: $font-normal
+    font-size: 14px
+
+  .confirmacao-mensagem-erro > p
+    background: red
+    padding: 5px 10px
+    margin-bottom: 20px
+    margin-top: 0
+    color: white
+    font-size: 13px
+
+@media screen and (max-width: $max-mobile)
+  .confirmacao-container
+    padding: 8px 20px 20px 20px
+
+    .tab
+      margin-bottom: 10px
+
+    .header-confirmacao
+      .titulo
+        color: $titulo-confirmacao-mob
+        margin-top: 18px
+        margin-bottom: 23px
+        font-size: 16px
+
+    .texto
+      color: $texto-confirmacao-mob
+      margin-bottom: 23px
+
+    .form
+      label[for="telefone"]
+        color: $label-confirmacao-mob
+        font-family: $font-bold
+        font-size: 14px
+        white-space: nowrap
+
+      .alterar
+        color: $texto-alterar
+        display: block
+        font-size: 14px
+        font-family: $font-normal
+        letter-spacing: -0.3px
+        padding-top: 15px
+        text-decoration: none
+
+        .cliqueaqui
+          color: $texto-alterar-destaque
+          margin-left: 4px
+          font-size: 14px
+          text-decoration: underline
+
+      .actions
+        margin-bottom: 30px
+
+    > .footer-marca
+      display: flex
+      justify-content: center
+
+      > .marca
+        +icon-logo-footer-mobile
+        background-size: contain
+        display: flex
+        height: 110px
+        width: 335px
+
+    .confirmacao-mensagem-erro > p
+      margin-bottom: 0
+      margin-top: 0
+
+
+
+@media screen and (min-width: $min-desktop)
+  .confirmacao-container
+    padding: 7px 30px
+
+    .header-confirmacao
+      .titulo
+        color: $titulo-confirmacao
+        display: inline-block
+        font-size: 18px
+        margin-top: 15px
+        margin-bottom: 15px
+        width: 445px
+
+    .texto
+      color: $texto-confirmacao
+      width: 360px
+
+    .form
+      > label
+         margin-top: 20px
+         color: $label-confirmacao
+         margin-top: 34px
+         margin-bottom: 6px
+         font-size: 14px
+
+      .alterar
+        color: $texto-alterar
+        display: block
+        font-size: 14px
+        font-family: $font-normal
+        letter-spacing: -0.3px
+        padding-top: 15px
+        text-decoration: none
+
+        .cliqueaqui
+          color: $texto-alterar-destaque
+          margin-left: 4px
+          font-size: 14px
+          text-decoration: underline
+
+      .actions
+        margin-top: 20px
+
+    .footer-marca
+      display: none
+
+
+
+
+
+
+
+
+
+

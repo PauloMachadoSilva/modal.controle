@@ -1,0 +1,65 @@
+<div class="detalhes-pedidos">
+    <div class="header-pedidos">
+        <h2 class="titulo" ng-if="$ctrl.congratulationsType === 'parabens'" id="textoMigracao"><strong class="subtitulo">Parabéns!</strong> Sua linha da Oi de número {{$ctrl.dto.telefone | brPhoneNumber}} agora
+            possui o plano Oi Controle.</h2>
+        <h2 class="titulo" ng-if="$ctrl.congratulationsType === 'parabens-sem-saldo'" id="textoNovaLinha"><strong class="subtitulo">Parabéns!</strong> Seu pedido para o Oi Controle foi recebido com sucesso!</h2>
+    </div>
+
+    <div class="texto">
+        <p class="paragrafo" ng-if="$ctrl.congratulationsType === 'parabens'">
+            Em instantes você receberá um e-mail e um SMS confirmando a ativação do seu plano.
+            Assim que receber a confirmação por SMS,
+            você já poderá usufruir de todos os benefícios do seu novo plano.
+        </p>
+        <p class="paragrafo" ng-if="$ctrl.congratulationsType === 'parabens-sem-saldo'">
+            Para a ativação do seu novo plano você precisa,
+            em até 5 dias de um saldo de R$ {{$ctrl.dto.plan.Sku.Valor}} referente ao valor da Taxa de Adesão.
+            Se for necessário,
+            <a href="http://www.oi.com.br/oi/oi-pra-voce/planos-servicos/oi-movel/recarga/" target="_blank" class="facaRrecarga">faça uma recarga</a>
+            agora mesmo.
+        </p>
+    </div>
+
+    <div class="dados-pessoais" ng-if="$ctrl.congratulationsType === 'parabens'">
+        <ul class="lista">
+            <li class="item">
+                <span class="descricao">Código do Pedido</span>
+                <span class="dado-pessoal" id="codigoPedido">{{$ctrl.dto.orderKey}}</span>
+            </li>
+            <li class="item">
+                <span class="descricao">Nome</span>
+                <span class="dado-pessoal" id="nome">{{$ctrl.dto.nome}}</span>
+            </li>
+            <li class="item">
+                <span class="descricao">CPF</span>
+                <span class="dado-pessoal" id="cpf">{{$ctrl.dto.cpf | brCpf}}</span>
+            </li>
+            <li class="item">
+                <span class="descricao">Plano</span>
+                <span class="dado-pessoal" id="plano">{{$ctrl.dto.Sku.Nome}} {{$ctrl.description.internet.Titulo}}</span>
+            </li>
+            <li class="item">
+                <span class="descricao">Valor</span>
+                <span class="dado-pessoal" id="valor">R${{$ctrl.dto.plan.Sku.Valor}} /mês</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="time-line" ng-if="$ctrl.congratulationsType === 'parabens-sem-saldo'">
+        <div class="estado -primeiro active">
+            <div class="item -status">Pedido <span class="quebra">Realizado</span></div>
+            <div class="linha"></div>
+            <div class="item -valor"></div>
+        </div>
+        <div class="estado -ultimo">
+            <div class="item -status">Pagamento da Taxa <span class="quebra">de adesão e ativação do</span><span class="quebra">Plano Oi Controle</span></div>
+            <div class="linha"></div>
+            <div class="item -valor"></div>
+        </div>
+        <div class="tooltip">
+            <p>A primeira fatura do plano será programada para 60 dias após o pagamento da taxa de adesão</p>
+        </div>
+    </div>
+
+    <button id="goHome" class="btn -default" ng-click="$ctrl.goToHome()" ng-if="$ctrl.congratulationsType=== 'parabens'">OK</button>
+</div>

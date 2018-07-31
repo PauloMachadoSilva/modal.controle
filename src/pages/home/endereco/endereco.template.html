@@ -1,0 +1,58 @@
+<div class="endereco-container">
+    <wza-tab-bar ng-if="!$ctrl.isMobile">
+        <wza-tab completed="true" name="Confirmação"></wza-tab>
+        <wza-tab completed="true" name="Dados Pessoais"></wza-tab>
+        <wza-tab active="true" name="Endereço"></wza-tab>
+        <wza-tab ng-if="$ctrl.isCreditcard" name="Dados do Cartão"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab completed="true" name="Confirmação"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab completed="true" name="Dados Pessoais"></wza-tab>
+    </wza-tab-bar>
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab active="true" name="Endereço"></wza-tab>
+    </wza-tab-bar>
+
+    <form class="form -compacto" name="dadosEnderecoForm" ng-submit="$ctrl.sendAddress()">
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <span class="validacao" ng-class="{'visivel': $ctrl.errorMessages.nome}">CEP inválido</span>
+                <input type="text" id="cepEndereco" name="cep" ng-model="$ctrl.endereco.cep" ng-keyup="$ctrl.searchAddress($ctrl.endereco.cep)"  placeholder="CEP" maxlength="8" number-validator required form-validator/>
+            </div>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <input type="text" id="enderecoEndereco" name="endereco" ng-model="$ctrl.endereco.enderecoCompleto" placeholder="Endereco" parse="false" disabled last-char form-validator required />
+            </div>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <input type="text" id="numeroEndereco" name="numero" ng-model="$ctrl.endereco.numero" placeholder="Número" maxlength="6" number-validator form-validator required>
+            </div>
+            <div class="validator">
+                <span class="validacao"></span>
+                <!-- <span class="validacao" ng-class="{'visivel': $ctrl.errorMessages.nomeMae}">Nome da mãe digitado não confere com o cpf</span> -->
+                <input type="text" id="complementoEndereco" name="complemento" ng-model="$ctrl.endereco.complemento" placeholder="Complemento" maxlength="15" form-validator>
+            </div>
+        </div>
+        <span class="search-cep" ng-click="$ctrl.findCep()">
+            <strong>Não sabe o CEP?</strong>
+            Clique aqui.
+        </span>
+        <wza-tab-bar ng-if="($ctrl.isMobile)">
+            <wza-tab active="true" name="Dados do Cartão"></wza-tab>
+        </wza-tab-bar>
+        <div class="actions">
+            <div class="spacer"></div>
+            <button type="submit" id="submitEndereco" class="btn -default" ng-disabled="($ctrl.isLoading || dadosEnderecoForm.$invalid) && !$ctrl.errorMessage">Continuar</button>
+        </div>
+    </form>
+
+    <wza-loading class="loading-container" ng-if="$ctrl.isLoading"></wza-loading>
+</div>

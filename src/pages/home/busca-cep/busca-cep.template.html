@@ -1,0 +1,31 @@
+<div class="busca-cep-container">
+    <div class="header-lead">
+        <h2 class="title">CONFIRME SEU ENDEREÇO PARA ACHARMOS O SEU CEP.</h2>
+    </div>
+    <div class="inline">
+        <input type="text" id="endereco" class="input-adress" placeholder="Endereço" ng-model="address" ng-change="$ctrl.handleInputAddress(address)" autofocus address-validator minlength="3" maxlength="150">
+    </div>
+    <div class="result">
+        <div class="list">
+          <div class="item" ng-repeat="e in $ctrl.listAddress track by $index" ng-click="$ctrl.selectedAddress(e)">
+            <div class="address">
+              <span class="street">{{::e.Endereco}}</span>
+              <div class="sub-adress">
+                <span class="district">{{::e.Bairro}} &#8226; {{::e.Cidade}}, {{::e.Uf}}</span>
+                <div class="actions" ng-click="$ctrl.selectedAddress(e)">
+                  <a class="selected" href="#">
+                    <span class="icon">&#62</span>
+                    Selecionar
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="cep">
+              <span class="title">CEP:</span>
+              <span class="number">{{::e.Cep}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<wza-loading class="loading-container" ng-if="$ctrl.isLoading"></wza-loading>

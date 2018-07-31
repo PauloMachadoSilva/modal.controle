@@ -1,0 +1,103 @@
+.tab
+  height: 40px
+  flex: 1
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &.-completed
+    .title
+      position: relative
+
+      &:after
+        background-color: $bg-checked-tab
+        +border-radius(50px)
+        content: '✓'
+        color: $checked-tab
+        font-size: 8px
+        font-weight: bold
+        padding: 1px
+        position: absolute
+        width: 16px
+        top: -28px
+
+  > .header
+    > .title
+      font-family: 'SimplonBPMedium', sans-serif
+      color: $borda-tab
+      text-align: center
+
+@media screen and (max-width: $max-mobile)
+  .tab
+    border-bottom: solid 1px $borda-tab
+    display: flex
+    justify-content: flex-start
+    margin-top: 12px
+    width: 100%
+
+    &.-completed
+      margin-top: 15px
+      > .header
+        > .title
+          &:after
+            right: -18px
+            top: -22px
+
+    > .header
+      width: 128px
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+      border: solid 1px $borda-tab
+      border-bottom: none
+
+      > .title
+        line-height: 16px
+        color: $borda-tab
+        width: 120px
+        height: 14px
+        letter-spacing: -0.2px
+        font-size: 14px
+
+    &.-active
+      border-bottom: solid 1px $borda-tab
+
+      > .header
+        border: solid 1px $borda-tab
+        border-bottom: none
+        > .title
+          color: $borda-tab
+
+@media screen and (min-width: $min-desktop)
+  .tab
+    width: 100%
+    border-bottom: solid 1px $borda-tab
+
+    &.-active
+      > .header
+        border: solid 1px $borda-tab
+        border-bottom: none
+        border-radius: 0
+
+    &.-clickable
+      cursor: pointer
+
+    &.-completed
+      > .header
+        > .title
+          &:after
+            left: 50%
+            transform: translateX(-8px)
+
+    > .header
+      flex: 1
+      height: 40px
+      display: flex
+      align-items: center
+      justify-content: center
+
+      > .title
+        font-size: 13px
+        line-height: 16px
+        color: $borda-tab

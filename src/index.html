@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Planos Controle da Oi com internet 4G - Contrate aqui | Oi Celular</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#a02bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Oi Pós">
+    <meta name="msvalidate.01" content="5A6C3E6322909D9B00664A604E6BC6C4" />
+    <meta name="description" content=" Com o Oi Mais Controle, você tem muito mais internet e não terá surpresas em sua conta. O valor é sempre fixo. Contrate Agora!">
+
+    <base href="/">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+    <link rel="canonical" href="https://oimodalcontrole.com.br/" />
+
+    <link rel="stylesheet" href="/assets/css/vendors.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Google Tag Manager -->
+    <script async>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5THSNHS');
+
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body ng-app="oi.controle" ng-strict-di>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5THSNHS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript>Nossa página apenas funciona com JavaScript habilitado. Por favor, habilite o JavaScript no seu browser.</noscript>
+
+    <ui-view></ui-view>
+
+
+    <script type="text/javascript" src="/assets/js/vendors.js"></script>
+    <script type="text/javascript" src="/assets/js/scripts.js"></script>
+    <!--Service Worker -->
+    <script type="text/javascript" async>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        console.log('O ServiceWorker foi registrado');
+      });
+    }
+  </script>
+</body>
+
+</html>

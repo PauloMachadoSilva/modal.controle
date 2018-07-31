@@ -1,0 +1,34 @@
+.endereco-container
+    > .form
+        > .search-cep
+            cursor: pointer
+            float: right
+            font-family: SimplonBPMedium
+            > strong
+                font-family: SimplonBPRegular
+    
+@media screen and (min-width: $min-desktop)
+    .endereco-container
+        padding: 20px 30px
+        > .form
+            > .search-cep
+                font-size: 14px
+                margin-top: 10px
+
+            > .actions
+                margin-top: 82px
+
+@media screen and (max-width: $max-mobile)
+    .endereco-container
+        padding: 15px 20px 0
+        > .form
+            > .search-cep
+                display: block
+                margin-top: 11px
+                text-align: center
+                width: 100%
+
+            .tabbar-container     
+                padding-top: 31px
+                width: 100%
+                

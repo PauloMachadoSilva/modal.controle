@@ -1,0 +1,20 @@
+<div class="erro-container">
+    <div class="header-erro">
+        <h2 class="message" ng-if="$ctrl.erroType === 'oferta-pos'">
+            <span class="nome">{{$ctrl.nome[0]}}</span>, não foi possível contratar o plano escolhido, mas temos ofertas especiais
+            para você. Contrate agora o Oi Pós e ganhe bônus de internet todo mês.
+        </h2>
+        <h2 class="message" ng-if="$ctrl.erroType === 'oferta-cartao'">
+            <span class="nome">{{$ctrl.nome[0]}}</span>, não foi possível disponibilizar o plano escolhido com pagamento via boleto, mas você pode
+            contratar com cartão ;) <span class="nome">#JuntoÉBemMelhor</span>
+        </h2>
+        <h2 class="message" ng-if="$ctrl.erroType === 'retentativa-cartao'">
+            <span class="nome">{{$ctrl.nome[0]}}</span>, não foi possível disponibilizar o plano escolhido com pagamento via cartão, mas podemos
+            tentar mais uma vez :)
+        </h2>
+    </div>
+    <a class="btn -default" href="http://oiplanospos.com.br/?utm_source=lp.controleboleto&utm_medium=button&utm_campaign=crv.controle" target="_blank" ng-click="$ctrl.trackOiPosOffer()" ng-if="$ctrl.erroType === 'oferta-pos' && !$ctrl.isMobile">Conhecer ofertas Oi Pós</a>
+    <button class="btn -default" id="goFluxoCartao" ng-click="$ctrl.sendLead()" ng-if="$ctrl.erroType === 'oferta-cartao'">Quero contratar com pagamento via cartão de crédito</button>
+    <button class="btn -default" id="goFluxoCartaoRetentativa" ng-click="$ctrl.goToCreditCardView()" ng-if="$ctrl.erroType === 'retentativa-cartao'">Continuar</button>
+</div>
+<wza-loading class="loading-container" ng-if="$ctrl.isLoading"></wza-loading>

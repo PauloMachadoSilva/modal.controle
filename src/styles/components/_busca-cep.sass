@@ -1,0 +1,79 @@
+.busca-cep-container
+  padding: 0 30px
+
+  .title
+    color: #4a4a4a
+    width: 67%
+
+  .inline
+    margin-top: 3%
+    width: 86%
+
+    .input-adress
+      border: solid 1px #dedede
+      height: 50px
+      width: 100%
+
+  > .result
+      .description
+        position: relative
+        top: 23px
+
+      .list
+        top: 46px
+        height: 264px
+        overflow: auto
+        position: relative
+
+        .item
+          border-radius: 5px
+          background-color: #ffffff
+          border: solid 1px #d2d2d2
+          height: 76px
+          margin: 2px 0px 14px
+          width: 96%
+
+          > .address
+              margin: 9px 17px 2px
+              .street
+                font-size: 14px
+              .sub-adress
+                font-size: 12px
+                .actions
+                  color: #a02bff
+                  float: right
+                  font-size: 14px
+                  width: 19%
+
+                  .selected
+                    color: #a02bff
+
+          > .cep
+              font-size: 14px
+              margin: 4px 16px 0px
+
+@media screen and (max-width: $max-mobile)
+  .busca-cep-container
+    > .result
+        > .list
+            .item
+              > .address
+                  margin: 8px 8px 2px
+                  .street
+                    font-weight: 500
+
+                  .sub-adress
+                    .actions
+                      height: 1%
+
+                      .selected
+                        float: right
+                        font-size: 14px
+                        width: 77px
+              > .cep
+                margin: 4px 7px 0px
+
+
+
+
+

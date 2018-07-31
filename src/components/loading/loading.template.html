@@ -1,0 +1,12 @@
+<div class="loading-wrapper">
+    <p class="title">Processando sua solicitação</p>
+    <div class="progress-bar">
+        <div class="line-hover"></div>
+        <div class="line"></div>
+    </div>
+    <div class="description" ng-if="$ctrl.isDadosPessoais">
+        Novo Plano <span>Oi Mais Controle</span>
+        <br>
+        na linha {{$ctrl.telefone | brPhoneNumber}}
+    </div>
+</div>

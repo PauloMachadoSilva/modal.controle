@@ -1,0 +1,20 @@
+<div class="wrapper" ng-if="!$ctrl.isMobile">
+    <div class="item -code" ng-click="$ctrl.expandInfo($event)">
+        <h3 class="title">Código do Pedido</h3>
+        <p class="detail">{{$ctrl.dto.orderKey}}</p>
+    </div>
+    <div class="details -congrats">
+        <div class="item">
+            <h3 class="title">CPF</h3>
+            <p class="detail">{{$ctrl.dto.cpf | brCpf}}</p>
+        </div>
+        <div class="item">
+            <h3 class="title">Plano</h3>
+            <p class="detail">{{$ctrl.dto.plan.Sku.Nome}} {{$ctrl.description.internet.Titulo}}</p>
+        </div>
+        <div class="item">
+            <h3 class="title">Valor</h3>
+            <p class="detail">R$ {{$ctrl.dto.plan.Sku.Valor}}//mês</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+.cartao-container
+    padding: 30px
+    width: 100%
+    font-size: 12px
+    box-sizing: border-box
+    label[for=termos]
+        margin-right: 15px
+        &:after
+            border: 1px solid $borda-termo !important
+        &:before
+            color: $borda-termo !important
+        
+    .texto-termo
+        flex: 1
+        font-size: 12px
+        font-weight: 300
+        span
+            line-height: 0.7
+            a
+                display: block
+                margin: 0
+                padding: 0
+        .info-termos
+            font-size: 10px
+            line-height: 0.5
+
+@media screen and(max-width: $max-mobile)
+    .cartao-container
+        padding: 20px
+        .validator
+            select
+                margin: auto 0
+
+        > .form 
+            > .actions
+                display: flex
+                flex-wrap: wrap
+                > .texto-termo 
+                    > span 
+                        > a
+                            color: #000
+                            display: inline-block
+                    > .info-termos
+                        color: #9c9c9c
+                        display: block 
+                        font-size: 12px
+                        line-height: 1 
+                        margin-top: 8px      
+                > .btn
+                    &.-default
+                        flex: none
+                        margin-top: 42px
+

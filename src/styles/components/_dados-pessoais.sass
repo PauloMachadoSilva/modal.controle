@@ -1,0 +1,39 @@
+.dados-pessoais-container
+  width: 100%
+  box-sizing: border-box
+
+@media screen and (max-width: $max-mobile)
+  .dados-pessoais-container
+    padding: 8px 20px 20px 20px
+    overflow-y: auto
+
+    > .footer-marca
+      display: flex
+      justify-content: center
+
+      > .marca
+        +icon-logo-footer-mobile
+        background-size: contain
+        display: flex
+        height: 110px
+        width: 335px
+
+@media screen and (min-width: $min-desktop)
+  .dados-pessoais-container
+    padding: 20px 30px
+
+    > .footer-marca
+      display: none
+
+.dados-pessoais-mensagem-erro > p
+  background: red
+  padding: 5px 10px
+  margin-bottom: 10px
+  margin-top: 0
+  color: white
+  font-size: 13px
+
+@media screen and (max-width: $max-mobile)
+  .dados-pessoais-mensagem-erro > p
+    margin-bottom: 0
+    margin-top: 0

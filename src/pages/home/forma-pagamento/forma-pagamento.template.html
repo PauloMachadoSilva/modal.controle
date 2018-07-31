@@ -1,0 +1,36 @@
+<div class="pagamento-container">
+    <div class="titulo-pagamento">
+        <p class="titulo">SELECIONE A FORMA DE PAGAMENTO</p>
+    </div>
+    <form name="formPagamento"  ng-submit="$ctrl.submit()">
+        <div class="pagamento">
+            <div class="check -cartao" ng-class="$ctrl.pagamento == 'cartao' ? '-diferente-cartao' : '-diferente-cartao-disable'" ng-click="$ctrl.selecionaBackground('cartao')">
+                <div class="box -payment">
+                    <div class="title -payment">
+                        <input type="radio" name="pagamento" id="pagamentoCartao" class="radio-pagamento" ng-model="$ctrl.pagamento" value="cartao">
+                        <label for="pagamentoCartao" class="label -cartao">Cartão de crédito</label>
+                    </div>
+                    <p class="text -payment">Nesta opção, você tem um preço exclusivo e ainda ganha {{$ctrl.bonus}} de internet por <strong>6 meses.</strong></p>
+                </div>
+                <label class="bonus-texto">{{$ctrl.description.internet.Titulo}}</label>
+            </div>
+            <div class="check -boleto" ng-class="$ctrl.pagamento == 'boleto' ? '-diferente-boleto' : '-diferente-boleto-disable'" ng-click="$ctrl.selecionaBackground('boleto')">
+                <div class="box -payment">
+                    <div class="title -payment -bill">
+                        <input type="radio" name="pagamento" id="pagamentoBoleto" class="radio-pagamento" ng-model="$ctrl.pagamento" value="boleto">
+                        <label for="pagamentoBoleto" class="label -boleto">Boleto bancário</label>
+                    </div>
+                    <p class="text -payment">Nesta opção, você ganha {{$ctrl.bonus}} para usar apenas nos primeiros 30 dias.</p>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="spacer"></div>
+            <button class="btn -payment" id="submitLead" type="submit" ng-disabled="$ctrl.isLoading || formPagamento.$invalid" >Continuar</button>
+        </div>
+    </form>
+</div>
+<div class="bonus-details">
+    <span class="text-details"> *Bônus para pagamento com cartão de crédito</span>
+</div>
+<wza-loading class="loading-container" ng-if="$ctrl.isLoading"></wza-loading>

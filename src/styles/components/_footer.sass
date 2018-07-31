@@ -1,0 +1,58 @@
+.footer-container
+  color: $texto-secundario
+  display: flex
+  flex-direction: column
+  align-items: center
+  font-family: Arial, sans-serif;
+
+  .marca
+    object-fit: contain
+
+@media screen and (min-width: $min-desktop)
+  .footer-container
+    background-color: $bg-footer-desk
+    padding: 60px 0
+
+    > .powered
+      font-size: 11px
+      margin-bottom: 0
+
+    > .marca
+      +icon-logo-footer
+      background-size: contain
+      display: inline-block
+      position: relative
+      width: 426px
+      height: 42px
+
+    > .copyright
+      margin-top: 26px
+      font-size: 12px
+      font-style: normal
+
+@media screen and (max-width: $max-mobile)
+  .footer-container
+    background-color: #fff
+    padding: 0 0 0 0
+
+    > .marca
+      +icon-logo-footer-mobile
+      display: inline-block
+      height: 117px
+      background-size: cover;
+      position: relative
+      width: 355px
+
+    > .copyright
+      display: none
+
+    > .powered
+      display: none
+
+
+
+
+
+
+
+

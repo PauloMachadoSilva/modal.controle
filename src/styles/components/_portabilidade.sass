@@ -1,0 +1,100 @@
+.portabilidade-container
+  padding: 0 20px
+  display: flex
+  flex-direction: column
+
+  > .header-portabilidade
+    > .titulo
+      color: $titulo-portabilidade
+      font-family: $font-light
+      font-weight: 300
+
+    > .nomeplano
+      color: $titulo-destaque-portabilidade
+
+  > .texto
+    > .explicacao
+      color: $texto-portabilidade
+      font-family: $font-normal
+      letter-spacing: -0.2px
+      text-align: justify
+
+  > .actions
+    cursor: pointer
+
+    &.-voltar
+        align-self: flex-end
+        border-bottom: 1px solid $voltar-portabilidade
+        color: $voltar-portabilidade
+        font-family: $font-light
+        font-size: 18px
+        margin-top: 15px
+        padding-bottom: 3px
+        position: relative
+
+        &:before
+          content: ''
+          height: 20px
+          +icon-fill
+          left: -23px
+          position: absolute
+          width: 10.4px
+          background-size: contain
+          top: 4px
+          transform: rotate(172deg)
+
+@media screen and (max-width: $max-mobile)
+  .portabilidade-container
+    padding-left: 20px
+    padding-right: 20px
+
+    > .header-portabilidade
+
+      > .titulo
+        margin-top: 11px
+        margin-bottom: 10px
+        font-size: 22px
+
+      > .nomeplano
+        font-size: 22px
+
+    > .texto
+      > .explicacao
+        margin-top: 30px
+        margin-bottom: 30px
+
+    > .form
+      > .fields
+        > label
+          font-size: 18px
+
+      > .btn
+        margin-bottom: 35px
+
+@media screen and (min-width: $min-desktop)
+  .portabilidade-container
+
+    > .header-portabilidade
+
+      > .titulo
+        margin-top: 25px
+        margin-bottom: 5px
+        font-size: 28px
+
+      > .nomeplano
+        font-size: 28px
+
+    > .texto
+      padding-top: 15px
+      padding-bottom: 15px
+
+      > .explicacao
+        margin: 0
+        padding: 0
+
+    > .form
+      > .fields
+        font-size: 18px
+
+      > .actions
+        margin-top: 30px

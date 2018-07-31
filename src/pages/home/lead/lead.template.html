@@ -1,0 +1,36 @@
+<div class="lead-container">
+    <div class="header-lead">
+        <h2 class="titulo">CONTRATE AGORA SEU</h2>
+        <label class="subtitulo">OI MAIS CONTROLE</label>
+    </div>
+
+    <form class="form" name="leadForm" ng-submit="$ctrl.sendLead()">
+        <div class="fields -label -info">
+            <label for="telefone">Infome seus dados</label>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <input type="text" id="telefoneLead" name="telefone" ng-model="$ctrl.lead.telefone" placeholder="[DDD] + Número" autofocus with-area-code='' custom-cel-phone-validator ui-br-phone-number last-char form-validator required>
+            </div>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <input type="text" id="nomeLead" name="nome" ng-model="$ctrl.lead.nome" maxlength="150" custom-name-validator only-letters form-validator required placeholder="Nome completo" />
+            </div>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <input type="email" id="emailLead" name="email" ng-model="$ctrl.lead.email" maxlength="150" placeholder="E-mail" email-validator form-validator required >
+            </div>
+        </div>
+        <div class="actions">
+            <div class="spacer"></div>
+            <button id="submitLead" type="submit" class="btn -default" ng-disabled="$ctrl.isLoading || leadForm.$invalid">Continuar</button>
+        </div>
+    </form>
+
+</div>
+<wza-loading class="loading-container" ng-if="$ctrl.isLoading"></wza-loading>

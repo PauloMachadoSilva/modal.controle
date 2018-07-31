@@ -1,0 +1,7 @@
+<div id="voltarDadosPessoais" class="tab {{$ctrl.active ? '-active' : ''}}{{$ctrl.state ? '-clickable' : ''}}{{$ctrl.completed ? '-completed' : ''}}" ng-click="$ctrl.goTo($ctrl.state)">
+  <div class="header">
+    <span class="title" title="{{::$ctrl.name}}">
+      {{::$ctrl.name | uppercase}}
+    </span>
+  </div>
+</div>

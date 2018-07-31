@@ -1,0 +1,28 @@
+.tabbar-container
+  display: flex
+
+@media screen and (max-width: $max-mobile)
+  .tabbar-container
+    margin-bottom: 1px
+
+    > *
+      width: 100%
+
+    &.-inactive
+      flex-direction: column
+
+      .tab
+        margin-top: 10px
+
+
+@media screen and (min-width: $min-desktop)
+  .tabbar-container
+    margin-bottom: 20px
+    height: 40px
+
+    > *
+      flex: 1
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column

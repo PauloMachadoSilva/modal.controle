@@ -1,0 +1,62 @@
+<div class="dados-pessoais-container">
+    <wza-tab-bar ng-if="!$ctrl.isMobile">
+        <wza-tab completed="true" name="Confirmação"></wza-tab>
+        <wza-tab active="true" name="Dados Pessoais"></wza-tab>
+        <wza-tab ng-if="$ctrl.isCreditcard" name="Dados do Cartão"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab completed="true" name="Confirmação"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab active="true" name="Dados Pessoais"></wza-tab>
+    </wza-tab-bar>
+
+    <form class="form -compacto" name="dadosPessoaisForm" ng-submit="$ctrl.sendDadosPessoais()">
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <span class="validacao" ng-class="{'visivel': $ctrl.errorMessages.nome}">Nome do titular digitado não confere com o cpf</span>
+                <input type="text" id="nomeDadosPessoais" name="nome" ng-model="$ctrl.dadosPessoais.nome" placeholder="Nome Completo" maxlength="150" custom-name-validator only-letters required form-validator/>
+            </div>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <span class="validacao" ng-class="{'visivel': $ctrl.errorMessages.nascimento}">Data inválida ao cpf</span>
+                <input type="text" id="nascimentoDadosPessoais" name="nascimento" ng-model="$ctrl.dadosPessoais.nascimento" placeholder="Nascimento" custom-age-validator ui-date-mask="DD/MM/YYYY" parse="false" last-char form-validator required />
+            </div>
+            <div class="validator">
+                <span class="validacao"></span>
+                <input type="text" id="cpfDadosPessoais" name="cpf" ng-model="$ctrl.dadosPessoais.cpf" placeholder="CPF" ui-br-cpf-mask last-char form-validator required />
+            </div>
+            <div class="validator">
+                <span class="validacao"></span>
+                <input type="text" id="numeroDadosPessoais" name="numero" ng-model="$ctrl.dadosPessoais.numero" placeholder="[DDD] + Número" with-area-code='' oi-phone-validator ui-br-phone-number form-validator last-char required />
+            </div>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <input type="email" id="emailDadosPessoais" name="email" ng-model="$ctrl.dadosPessoais.email" placeholder="E-mail" maxlength="150" custom-email-validator form-validator required>
+            </div>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <span class="validacao" ng-class="{'visivel': $ctrl.errorMessages.nomeMae}">Nome da mãe digitado não confere com o cpf</span>
+                <input type="text" id="nomeMaeDadosPessoais" name="nomeMae" ng-model="$ctrl.dadosPessoais.nomeMae" placeholder="Nome completo da mãe" maxlength="150" custom-name-validator only-letters form-validator required>
+            </div>
+        </div>
+        <wza-tab-bar ng-if="($ctrl.isMobile && $ctrl.isCreditcard)">
+            <wza-tab name="Dados do Cartão"></wza-tab>
+        </wza-tab-bar>
+        <div class="actions">
+            <div class="spacer"></div>
+            <button type="submit" id="submitDadosPessoais" class="btn -default" ng-disabled="($ctrl.isLoading || dadosPessoaisForm.$invalid) && !$ctrl.errorMessage">Continuar</button>
+        </div>
+    </form>
+
+</div>
+<wza-loading class="loading-container" ng-if="$ctrl.isLoading"></wza-loading>

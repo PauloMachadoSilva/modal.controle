@@ -1,0 +1,367 @@
+.detalhes-pedidos
+  align-items: center
+  display: flex
+  flex-direction: column
+
+  > .header-pedidos
+    width: 100%
+
+    > .titulo
+      color: #000
+      font-family: $font-lp
+      font-weight: 300
+      font-size: 28px
+      margin: 0
+
+      > .subtitulo
+        color: $subtitulo-parabens
+        font-family: $font-lp
+
+  > .texto
+    width: 100%
+    > .paragrafo
+      color: $texto-dp
+      text-align: justify
+      margin: 0 0 10px 0
+
+      .facaRrecarga
+        color: $link-parabens
+        text-decoration: none
+
+
+  > .dados-pessoais
+    border: solid 1px $borda-dp
+    display: flex
+    flex-direction: column
+    width: 100%
+
+    > .lista
+      align-items: flex-start
+      padding: 0
+      margin: 0
+
+      > .item
+        list-style: none
+
+        > .descricao
+          color: $descricao-dp
+          font-family: $font-lp
+          font-weight: 500
+          display: block
+
+        > .dado-pessoal
+          color: $dado-pessoal-dp
+
+@media screen and (max-width: $max-mobile)
+
+  .detalhes-pedidos
+    padding-left: 20px
+    padding-right: 20px
+
+    .header-pedidos
+
+      .titulo
+        strong
+          display: block
+          padding-top: 20px
+
+    .texto
+      padding-top: 30px
+      padding-bottom: 30px
+
+    .dados-pessoais
+      padding-bottom: 40px
+      position: relative
+
+      .lista
+        .item
+          padding-top: 20px
+          padding-left: 20px
+
+    .btn
+      transform: translateY(-23px)
+      padding-top: 10px
+      padding-bottom: 10px
+
+    .time-line
+      text-align: center
+      font-size: 11px
+      line-height: 1.09
+      .estado
+        &.-primeiro
+          display: flex
+          flex-direction: row
+          margin-top: 10px
+          .item
+            color: $texto-primeira-timeline
+            flex: 1
+            margin: auto
+
+            .quebra
+              display: block
+            &.-status
+              &:before
+                background-color: white !important
+                border: 1px solid $bg-primeria-timeline
+                border-radius: 15px
+                content: ''
+                height: 20px
+                +icon-check
+                left: 50%
+                padding: 1px
+                position: absolute
+                transform: translateX(-12px)
+                width: 20px
+                background-size: 16px
+          .linha
+            background: $bg-primeria-timeline
+            height: 117px
+            width: 2px
+
+            &:before
+              background: $bg-primeria-timeline
+              content: ''
+              display: block
+              height: 7px
+              margin-top: -2px
+              transform: rotate(90deg)
+              width: 2px
+            &:after
+              background: $bg-primeria-timeline
+              content: ''
+              display: block
+              height: 7px
+              margin-top: 110px
+              transform: rotate(90deg)
+              width: 2px
+
+        &.-ultimo
+          &:before
+              background: $bg-ultima-timeline
+              content: ''
+              display: block
+              height: 118px
+              margin: auto
+              width: 2px
+          .item.-status
+            margin: auto
+            padding-top: 10px
+            width: 52%
+      .tooltip
+        background: $bg-destaque-parabens
+        border-radius: 4px
+        color: $texto-destaque-parabens
+        font-family: Lato
+        line-height: 1.18
+        margin: 16px auto
+        padding: 3px 16px
+        width: 55%
+        &:before
+          content: ''
+          display: block
+          background-color: $bg-destaque-parabens
+          height: 10px
+          width: 10px
+          margin: -2% 22%
+          transform: rotate(55deg) skew(20deg)
+          position: absolute
+
+    > .footer-marca
+      display: flex
+      justify-content: center
+
+      > .marca
+        +icon-logo-footer-mobile
+        background-size: contain
+        display: flex
+        height: 110px
+        width: 335px
+
+@media screen and (min-width: $min-desktop)
+
+  .detalhes-pedidos
+    padding-left: 30px
+    padding-right: 30px
+
+    .header-pedidos
+      padding-top: 45px
+
+    .dados-pessoais
+      display: none
+
+    .titulo
+      padding-top: 40px
+      padding-bottom: 40px
+
+      > .subtitulo
+        display: block
+
+    .texto
+      margin: 0
+      padding-bottom: 30px
+
+    .time-line
+      display: flex
+      flex-direction: row
+      max-width: 465px
+
+      .tooltip
+        +border-radius(4px)
+        background-color: $bg-tooltip
+        color: $texto-tooltip
+        font-size: 11px
+        font-family: $font-normal
+        height: 64px
+        position: relative
+        text-align: center
+        transform: translateY(36px)
+
+        &:before
+          border-style: solid
+          border-width: 0px 15px 10px 0
+          border-color: transparent $bg-tooltip transparent transparent
+          content: ''
+          display: block
+          height: 0px
+          left: -15px
+          position: absolute
+          width: 0px
+          top: 10px
+
+      .estado
+        align-items: center
+        display: flex
+        flex-direction: column
+        position: relative
+
+        &.-primeiro
+          width: 295px
+
+          transform: translateY(13px)
+
+        &.-ultimo
+          margin-right: 40px
+          width: 400px
+
+        .item
+          color: $borda-time-line
+          font-family: $font-normal
+          font-size: 11px
+          position: relative
+          text-align: center
+
+          .quebra
+            display: block
+
+          &.-valor
+            width: 65px
+            word-break: break-word
+
+        .linha
+          background-color: $borda-time-line
+          content: ''
+          display: block
+          height: 2px
+          margin-top: 10px
+          margin-bottom: 10px
+          position: relative
+          width: 100%
+
+          &:before, &:after
+            background-color: $borda-time-line
+            content: ''
+            position: absolute
+            height: 8px
+            width: 2px
+            top: -3px
+
+          &:before
+            left: 0
+
+          &:after
+            right: 0
+
+    .estado + .estado
+      .linha
+        &:before
+            display: none
+
+    .estado + .estado.active
+      .linha
+        background-color: $borda-time-line-ativo
+
+      .item
+        color: $texto-ativo-dp
+
+        &.-status
+          &:before
+            background-color: green
+            content: ''
+            height: 15px
+            +icon-check
+            left: 50%
+            position: absolute
+            top: -24px
+            transform: translateX(-7px)
+            width: 15px
+            background-size: contain
+
+      &:before, &:after
+        background-color: $borda-time-line-ativo
+        height: 7px
+        width: 2px
+
+    .estado + .estado.active + .estado
+      &:before
+        height: 0
+        width: 0
+
+    .btn
+      display: none
+
+    .estado.-primeiro.active
+      .linha
+        background-color: $borda-time-line-ativo
+
+        &:before
+          background-color: $borda-time-line-ativo
+          height: 7px
+          width: 2px
+
+        &:after
+          background-color: $borda-time-line-ativo
+
+      .item
+        color: $texto-ativo-dp
+
+        &.-status
+          &:before
+            background-color: green
+
+            content: ''
+            height: 15px
+            +icon-check
+            left: 50%
+            position: absolute
+            top: -24px
+            transform: translateX(-7px)
+            width: 15px
+            background-size: contain
+
+      &:before, &:after
+        background-color: $borda-time-line-ativo
+        height: 7px
+        width: 2px
+
+    .estado.-primeiro.active + .estado
+      &:before
+        height: 0
+        width: 0
+
+    > .footer-marca
+      display: none
+
+
+
+
+

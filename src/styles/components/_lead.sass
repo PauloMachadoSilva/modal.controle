@@ -1,0 +1,134 @@
+.lead-container
+  padding: 0 20px
+  display: flex
+  flex-direction: column
+
+  label,
+  .info-text
+    font-family: $font-bold
+
+  .label
+    font-weight: 500
+    font-size: 18px
+    letter-spacing: -0.3px
+
+  > .header-lead
+    > .titulo
+      color: #000
+      display: inline-block
+      font-family: $font-lp
+      font-weight: 300
+      letter-spacing: -0.3px
+      line-height: 0.93
+      margin-bottom: 0px
+
+      > .subtitulo
+        color: #a02bff
+        display: inline-block
+        margin-left: 4px
+        font-family: $font-lp
+
+  > .opcoes
+    > .title
+      font-size: 18px
+      font-family: $font-lp
+
+    > .outras
+      padding-left: 25px
+
+      li
+        list-style: none
+
+      > .item
+        margin-bottom: 15px
+        padding-bottom: 5px
+
+        > .link
+          color: $texto-outras-opcoes
+          font-family: $font-light
+          font-size: 18px
+          position: relative
+          text-decoration: none
+
+          &:before
+            content: ''
+            height: 20px
+            +icon-fill
+            left: -23px
+            position: absolute
+            width: 10.4px
+            background-size: contain
+            top: 4px
+
+@media screen and (max-width: $max-mobile)
+  .lead-container
+    padding: 0 20px
+
+    > .header-lead
+      > .titulo
+        font-family: #000
+        font-size: 28px
+
+      > .subtitulo
+        color: #a02bff
+        font-size: 28px
+        font-family: $font-lp
+
+    > .opcoes
+      .outras
+        > .item
+          border-bottom: 1px solid $borda-outras-opcoes
+          width: 191px
+
+    label,
+    .label
+      margin-bottom: 20px
+
+    > .footer-marca
+      display: flex
+      justify-content: center
+
+      > .marca
+        +icon-logo-footer-mobile
+        background-size: contain
+        display: flex
+        height: 110px
+        width: 335px
+
+@media screen and (min-width: $min-desktop)
+  .lead-container
+    padding: 0 30px
+
+    > .header-lead
+      > .titulo
+        font-family: #000
+        font-size: 28px
+        margin-bottom: 0
+        margin-top: 35px
+
+      > .subtitulo
+        color: #a02bff
+        font-size: 28px
+        font-family: $font-lp
+
+    > .form
+      margin: 37px 0 30px 0
+
+    > .opcoes
+      > .title
+        margin: 0
+      > .outras
+        > .item
+          > .link
+            border-bottom: 1px solid $borda-outras-opcoes
+            display: inline-block
+
+
+
+
+
+
+
+
+
+

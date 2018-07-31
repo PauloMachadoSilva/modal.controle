@@ -1,0 +1,68 @@
+<div class="cartao-container">
+    <wza-tab-bar ng-if="!$ctrl.isMobile">
+        <wza-tab completed="true" name="Confirmação"></wza-tab>
+        <wza-tab completed="true" name="Dados Pessoais"></wza-tab>
+        <wza-tab completed="true" name="Endereço"></wza-tab>
+        <wza-tab active="true" name="Dados do Cartão"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab completed="true" name="Confirmação"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab completed="true" name="Dados Pessoais"></wza-tab>
+    </wza-tab-bar>
+    
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab completed="true" name="Endereço"></wza-tab>
+    </wza-tab-bar>
+
+    <wza-tab-bar ng-if="$ctrl.isMobile">
+        <wza-tab active="true" name="Dados do Cartão"></wza-tab>
+    </wza-tab-bar>
+
+    <form name="formCartao" class="form -compacto" ng-submit="$ctrl.sendFormCartao()">
+        <div class="fields">
+                <div class="validator">
+                    <span class="validacao"></span>
+                    <input type="text" id="cpfDadosPessoais" name="cpf" ng-model="$ctrl.formCartao.cpf" placeholder="CPF" ui-br-cpf-mask last-char form-validator required />
+                </div>
+        </div>
+        <div class="fields">
+            <div class="validator">
+                <span class="validacao"></span>
+                <input type="text" id="numeroCartaodeCredito" name="numcartao" ng-model="$ctrl.formCartao.numcartao" placeholder="Numero Cartao" parse="false" ui-credit-card last-char number-validator form-validator required />
+            </div>
+        </div>
+            <div class="fields">
+                <div class="validator">
+                    <span class="validacao"></span>
+                    <select name="anocartao" id="anoCartao" ng-model="$ctrl.formCartao.anocartao" ng-change="$ctrl.populateMonth()" form-validator required>
+                        <option value="" disabled selected>Ano de expiração</option>
+                        <option ng-repeat="year in $ctrl.years" value="{{year}}">{{year}}</option>
+                    </select>
+                </div>
+                <div class="validator">
+                    <span class="validacao"></span>
+                    <select name="mescartao" id="mesCartao" ng-model="$ctrl.formCartao.mescartao" form-validator required>
+                        <option value=""disabled selected>Mês de expiração</option>
+                        <option ng-repeat="month in $ctrl.months" value="{{month.value}}">{{month.label}}</option>
+                    </select>
+                </div>
+                <div class="validator">
+                    <span class="validacao"></span>
+                    <input type="text" id="codSegunca" name="codSeguranca" ng-model="$ctrl.formCartao.codseguranca" minlength="3" maxlength="4" placeholder="Código de segurança" parse="false" last-char form-validator required />
+                </div>
+            </div>
+            <div class="actions">
+                    <input type="checkbox" id="termos" name="termos" class="leitura-termos" checked ng-model="$ctrl.formCartao.termos" ng-required="true" />
+                    <label for="termos"></label>
+                    <div class="texto-termo">
+                        <span>Li e concordo com os <a href="/assets/images/termo.pdf" target="_blank"> termos e condições</a></span>
+                        <span class="info-termos">O plano é sem fidelização, assim você pode cancelar quando quiser sem multas</span>
+                    </div>
+                <button type="submit" id="submitFormCartao" class="btn -default" ng-disabled="$ctrl.isLoading || formCartao.$invalid">Continuar</button>
+            </div>
+    </form>
+</div>

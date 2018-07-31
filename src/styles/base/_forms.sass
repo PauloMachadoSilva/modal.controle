@@ -1,0 +1,264 @@
+label
+  color: $texto-label
+  display: block
+  font-family: "SimplonBPMedium"
+  font-weight: 500
+  letter-spacing: -0.3px
+  margin-bottom: 20px
+
+input[type="text"], input[type="email"], input[type="tel"], select, input[type="text"]:disabled, select:disabled
+  box-sizing: border-box
+  margin: 0
+  padding-left: 5px
+  outline: 0
+  font-size: 14px
+  color: $texto-form !important
+  background: $bg-form-text
+  font-family: $font-normal
+  border: none
+  z-index: 10
+
+  &::-webkit-input-placeholder
+    font-size: 14px
+    color: $texto-form
+  &::-moz-placeholder
+    font-size: 14px
+    color: $texto-form
+  &:-ms-input-placeholder
+    font-size: 14px
+    color: $texto-form
+  &:-moz-placeholder
+    font-size: 14px
+    color: $texto-form
+
+.form
+  .validator
+    border: 1px solid  $borda-input-desk
+    display: flex
+    flex: 1
+    flex-direction: column
+    height: 51px
+    margin-top: -1px
+
+    .validacao
+      color: $texto-fade
+      font-size: 13px
+      height: 0
+      overflow: hidden
+      padding-left: 5px
+      transform: translateY(23px)
+      transition: height 1s
+      transition: color 1s
+      z-index: 9
+      pointer-events: none
+
+      &.visivel
+        color: $valida-form
+        height: 19px
+        transform: translateY(4px)
+
+.loading
+  +icon-loading
+
+input[type="checkbox"] + label
+  &:after
+    position: relative
+    top: 5px
+
+
+input[type="checkbox"], input[type="radio"]
+  outline: none
+  display: none
+
+input[type=checkbox]:checked + label
+  &:before
+    content: '✔'
+    display: inline-block
+    color: $texto-checkbox
+    position: absolute
+    top: 16px
+    left: 5px
+    font-size: 16px
+    line-height: 1px
+
+
+input[type="checkbox"], input[type="radio"]
+  display: none
+  height: 0
+  position: relative
+  width: 0
+
+input[type="checkbox"] + label, input[type="radio"] + label
+  position: relative
+  &:after
+    border: 1px solid $borda-form
+    content: ''
+    display: inline-block
+    height: 20px
+    width: 20px
+
+input[type="radio"] + label
+  outline: none
+  position: relative
+
+  &:after
+    +border-radius(50px)
+    height: 12px
+    width: 12px
+
+input[type="radio"]:checked + label
+  &:before
+    content: ''
+    display: inline-block
+    background-color: $bg-form-radio
+    +border-radius(50px)
+    height: 8px
+    width: 8px
+    position: absolute
+    top: 3px
+    left: 3px
+
+.form
+  width: 100%
+
+  > .fields
+    display: flex
+
+    input
+      flex: 1
+
+    &.-label
+      display: flex
+      flex-direction: column
+
+      input
+        flex: none
+
+  &.-compacto
+    > .fields
+      display: flex
+      border-right: none
+
+      input
+        margin: 0
+        flex: 1
+        border-left: none
+        border-bottom: none
+        border-top: none
+
+      select
+        +icon-arrow-down-slin
+        appearance: none
+        background-position: 93% center
+        color: $texto-input-mob
+
+  > .actions
+    display: flex
+    margin-top: 40px
+    align-items: center
+
+    > .spacer
+      flex: 1
+    > .loading
+      margin: 0 10px
+
+    > .btn
+      border-radius: 4px
+      flex: 1
+      font-family: $font-normal
+      font-weight: 300
+      font-size: 17px
+      letter-spacing: -0.2px
+
+@media screen and (max-width: $max-mobile)
+  .form
+    > .fields
+      display: flex
+      flex-flow: row wrap
+      border: none
+
+      &.-opcao
+        > .data
+          > .radio
+            input + label
+              &:before
+                top: 6px
+
+
+      input
+        font-size: 18px
+      
+    &.-compacto
+      > .fields
+        border: none
+        flex-direction: column
+
+        input
+          flex: 1
+        
+        select
+          background-position: 97% center
+
+    > .actions
+      display: block
+      margin-top: 30px
+
+      > .spacer
+        display: none
+
+      > .loading
+        margin-top: 0
+        margin-bottom: 20px
+        margin-left: auto
+        margin-right: auto
+        display: block
+
+      > .btn
+        padding: 15px 0
+        width: 100%
+        height: 60px
+
+@media screen and (min-width: $min-desktop)
+
+  .form
+
+    select
+      border: 1px solid  $borda-input-desk
+      color: $texto-input
+      cursor: pointer
+
+    &.-compacto
+      > .fields
+        border-right: none
+
+        input, select
+          margin: 0
+          flex: 1
+          border-left: none
+          border-bottom: none
+          border-top: none
+
+      > .fields
+        &:first-child
+          input
+            margin-top: 0
+
+        .validator + .validator
+          border-left: none
+
+    > .actions
+      margin-top: 30px
+      position: relative
+
+      > .spacer
+        flex: 1
+
+      > .loading
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-55px, -13px)
+
+      > .btn
+        padding: 20px 0
+

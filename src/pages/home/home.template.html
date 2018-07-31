@@ -1,0 +1,18 @@
+<div class="modal-wrapper">
+    <div class="modal">
+        <div class="header">
+            <h3 class="title">Oi Controle</h3>
+            <a ng-click="$ctrl.close()" id="FecharModal" class="close">Fechar</a>
+        </div>
+        <div class="content">
+            <div class="steps">
+                <ui-view autoscroll='false' />
+            </div>
+            <wza-sidebar class="sidebar" bonus="$ctrl.showBonus" dto="$ctrl.dto" description="$ctrl.description" complement="$ctrl.complement"></wza-sidebar>
+        </div>
+        <div class="bonus-details" ng-if="$ctrl.showBonus">
+            <span class="text-details"> *Para pagamento no cartão de crédito o bônus de internet é válido por 6 meses. <br/>E para pagamento no boleto bancário o bônus de internet é válido para os primeiros 30 dias.</span>
+        </div>
+    </div>
+</div>
+<wza-loading class="loading-container" ng-if="$ctrl.loading"></wza-loading>

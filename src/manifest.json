@@ -1,0 +1,11 @@
+{
+  "short_name": "Oi Controle",
+  "name": "Oi Controle",
+  "icons": [
+  ],
+  "start_url": "/",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "theme_color": "#ff6d00",
+  "orientation": "portrait"
+}

@@ -1,0 +1,62 @@
+<div class="wrapper" ng-if="$ctrl.isMobile">
+    <div class="cellphone" ng-if="$ctrl.hasCellphone && $ctrl.modalidadeName">
+        {{$ctrl.modalidadeName}} da linha: {{$ctrl.dto.plan.Sku.Nome}}
+    </div>
+    <div class="cellphone" ng-if="$ctrl.isNovaLinha">
+        {{$ctrl.modalidadeName}}
+    </div>
+    <div class="info" ng-click="$ctrl.expandInfo($event)">
+        <span class="internet">
+            
+            {{$ctrl.complement.dados_valor}}</span>
+
+        <span class="name">{{$ctrl.dto.plan.Sku.Nome}}</span>
+        <span class="price">R$ {{$ctrl.dto.plan.Sku.Valor}}/mês</span>
+        <span class="arrow"></span>
+    </div>
+    <div class="details">
+        <span class="item -sms">
+            <strong>SMS</strong>
+            <span> {{ $ctrl.description.sms.Titulo }}</span>
+        </span>
+        <span class="item -wifi">
+            <strong>Oi WiFi</strong>
+            <span>{{ $ctrl.description.wifi.Titulo }}</span>
+        </span>
+        <span class="item -adhesion">
+            <strong>Pagamento</strong>
+            <span>{{ $ctrl.description.pagamento.Titulo }}</span>
+        </span>
+    </div>
+</div>
+<div class="wrapper" ng-if="!$ctrl.isMobile">
+    <div class="plan">
+        <span class="name">{{$ctrl.complement.dados_valor}}</span>
+        <div class="description"> 
+            <span class="text -title"> INTERNET 4G </span>  
+            <strong class="text -highlight">{{$ctrl.description.internet.Titulo}}*</strong>
+        </div>
+        <div class="description">
+            <span class="text -title">MINUTOS</span>
+            <span class="text -highlight"> {{ $ctrl.description.minutos.Titulo }}</span>
+        </div>
+    </div>
+    <div class="details">
+        <span class="item -sms">
+            <strong>SMS</strong>
+            <span> {{ $ctrl.description.sms.Titulo }}</span>
+        </span>
+        <span class="item -wifi">
+            <strong>Oi WiFi</strong>
+            <span>{{ $ctrl.description.wifi.Titulo }}</span>
+        </span>
+        <span class="item -adhesion">
+            <strong>Pagamento</strong>
+            <span>{{ $ctrl.description.pagamento.Titulo }}</span>
+        </span>
+    </div>
+    <div class="total">
+        <span class="title">Total</span>
+        <span class="price">R$ {{$ctrl.dto.plan.Sku.Valor}}/mês</span>
+    </div>
+</div>
